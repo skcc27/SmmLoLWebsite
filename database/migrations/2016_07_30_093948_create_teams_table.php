@@ -13,9 +13,11 @@ class CreateTeamsTable extends Migration
     public function up()
     {
         if (Schema::hasTable('contestants')) {
-            // TODO: Teams schema
             Schema::create('teams', function (Blueprint $table) {
                 $table->increments('id');
+                $table->string('name')->unique();
+                $table->string('tag')->unique();
+                $table->string('password');
                 $table->timestamps();
             });
         }
