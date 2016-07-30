@@ -1,6 +1,8 @@
 /vendor
 /node_modules
-/public/images/*
+public/images/
 /storage
 .env
 /.idea
+public/css/
+public/js/

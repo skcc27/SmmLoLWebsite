@@ -19,4 +19,6 @@ Website for Samarnmitr League of Legends tournament.
 
 ## Installation
 1. Clone this repo on your web server
-2. Edit configuration files to your own environment
+2. Run ```$ composer install```
+3. Run ```$ gulp --production```
+4. Edit configuration files to your own environment
