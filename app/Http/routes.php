@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Team registration page
 Route::post('/team/register', 'TeamController@register');
+Route::get('/team/register', 'TeamController@formPage');

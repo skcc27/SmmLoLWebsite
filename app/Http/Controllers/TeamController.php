@@ -57,6 +57,11 @@ class TeamController extends Controller
         return response()->json(['result' => 'success']);
     }
 
+    public function formPage()
+    {
+        return view('formtest');
+    }
+
     private function failedResponse($msg = 'No additional information')
     {
         return response()->json([
