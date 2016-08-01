@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class TeamController extends Controller
@@ -28,19 +29,15 @@ class TeamController extends Controller
                 'result' => 'invalid',
                 'errorBag' => $validator->errors()->toArray()
             ]);
-        // TODO: Database transaction
-        // Create team
-        $team = new Team;
-        $team->name = $request->input('name');
-        $team->tag = $request->input('tag');
-        $team->password = Hash::make($request->input('password'));
+        DB::beginTransaction();
         try {
+            // Create team
+            $team = new Team;
+            $team->name = $request->input('name');
+            $team->tag = $request->input('tag');
+            $team->password = Hash::make($request->input('password'));
             $team->save();
-        } catch (QueryException $e) {
-            return $this->failedResponse('Unable to create team');
-        }
-        // Create all contestants
-        try {
+            // Create all contestants
             foreach ($request->input('contestants') as $contestant) {
                 $c = new Contestant;
                 $c->first_name = $contestant['first_name'];
@@ -52,8 +49,10 @@ class TeamController extends Controller
                 $c->team_id = $team->id;
                 $c->save();
             }
-        } catch (QueryException $e) {
-            return $this->failedResponse('Unable to create contestant');
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            return $this->failedResponse('Query execution failed');
         }
         return response()->json(['result' => 'success']);
     }
