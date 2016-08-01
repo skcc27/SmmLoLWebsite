@@ -26,7 +26,14 @@
 </div>
 <div class="container">
     <div class="row">
-        <form class="form-horizontal">
+        @if (session('status'))
+            <div class="alert alert-{{ session('status') }}">
+                {{session('message')}}
+            </div>
+        @endif
+    </div>
+    <div class="row">
+        <form class="form-horizontal" method="post" action="/team/register">
             <fieldset>
 
                 <!-- Form Name -->
@@ -69,8 +76,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="first_name">First name</label>
                         <div class="col-md-4">
-                            <input id="first_name" name="first_name" type="text" placeholder="First name"
-                                   class="form-control input-md" required="">
+                            <input id="first_name" name="first_name_{{$i}}" type="text" placeholder="First name"
+                                   class="form-control input-md" @if($i != 6) required @endif>
 
                         </div>
                     </div>
@@ -79,8 +86,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="last_name">Last name</label>
                         <div class="col-md-4">
-                            <input id="last_name" name="last_name" type="text" placeholder="Last name"
-                                   class="form-control input-md" required="">
+                            <input id="last_name" name="last_name_{{$i}}" type="text" placeholder="Last name"
+                                   class="form-control input-md" @if($i != 6) required @endif>
 
                         </div>
                     </div>
@@ -89,8 +96,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="batch">SK</label>
                         <div class="col-md-4">
-                            <input id="batch" name="batch" type="text" placeholder="Batch" class="form-control input-md"
-                                   required="">
+                            <input id="batch" name="batch_{{$i}}" type="text" placeholder="Batch"
+                                   class="form-control input-md"
+                                   @if($i != 6) required @endif>
 
                         </div>
                     </div>
@@ -99,8 +107,9 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="summoner_name">Summoner name</label>
                         <div class="col-md-4">
-                            <input id="summoner_name" name="summoner_name" type="text" placeholder="Summoner name"
-                                   class="form-control input-md" required="">
+                            <input id="summoner_name" name="summoner_name_{{$i}}" type="text"
+                                   placeholder="Summoner name"
+                                   class="form-control input-md" @if($i != 6) required @endif>
 
                         </div>
                     </div>
@@ -109,8 +118,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="phone">Phone</label>
                         <div class="col-md-4">
-                            <input id="phone" name="phone" type="text" placeholder="Mobile phone number"
-                                   class="form-control input-md" required="">
+                            <input id="phone" name="phone_{{$i}}" type="text" placeholder="Mobile phone number"
+                                   class="form-control input-md" @if($i != 6) required @endif>
 
                         </div>
                     </div>
@@ -119,9 +128,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="facebook">Facebook</label>
                         <div class="col-md-4">
-                            <input id="facebook" name="facebook" type="text" placeholder="Facebook"
-                                   class="form-control input-md" required="">
-
+                            <input id="facebook" name="facebook_{{$i}}" type="text" placeholder="Facebook"
+                                   class="form-control input-md" @if($i != 6) required @endif>
                         </div>
                     </div>
             @endfor
@@ -136,6 +144,14 @@
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+
+                <div class="checkbox">
+                    <div class="col-md-4 col-md-offset-4">
+                        <label>
+                            <input type="checkbox"> Check me out
+                        </label>
                     </div>
                 </div>
 

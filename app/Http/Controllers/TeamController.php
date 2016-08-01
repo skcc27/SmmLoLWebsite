@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Contestant;
 use App\Team;
-use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,10 +24,7 @@ class TeamController extends Controller
             // TODO: More validation (contestant details)
         ]);
         if ($validator->fails())
-            return response()->json([
-                'result' => 'invalid',
-                'errorBag' => $validator->errors()->toArray()
-            ]);
+            return redirect('/team/register')->with(['status' => 'danger', 'message' => 'Invalid data!']);
         DB::beginTransaction();
         try {
             // Create team
@@ -38,23 +34,26 @@ class TeamController extends Controller
             $team->password = Hash::make($request->input('password'));
             $team->save();
             // Create all contestants
-            foreach ($request->input('contestants') as $contestant) {
+            for ($i = 1; $i <= 6; $i++) {
+                if ($i == 6)
+                    if ($request->input('first_name') == '')
+                        continue;
                 $c = new Contestant;
-                $c->first_name = $contestant['first_name'];
-                $c->last_name = $contestant['last_name'];
-                $c->batch = $contestant['batch'];
-                $c->summoner_name = $contestant['summoner_name'];
-                $c->phone = $contestant['phone'];
-                $c->facebook = $contestant['facebook'];
+                $c->first_name = $request->input('first_name_' . $i);
+                $c->last_name = $request->input('last_name_' . $i);
+                $c->batch = $request->input('batch_' . $i);
+                $c->summoner_name = $request->input('summoner_name_' . $i);
+                $c->phone = $request->input('phone_' . $i);
+                $c->facebook = $request->input('facebook_' . $i);
                 $c->team_id = $team->id;
                 $c->save();
             }
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
-            return $this->failedResponse('Query execution failed');
+            return redirect('/team/register')->with(['status' => 'danger', 'message' => 'Internal error! Please contact the admin!']);
         }
-        return response()->json(['result' => 'success']);
+        return redirect('/team/register')->with(['status' => 'success', 'message' => 'Registration successes!']);
     }
 
     public function formPage()
