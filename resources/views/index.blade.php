@@ -40,7 +40,7 @@
                         <input type="text" required>
                         <br>
                         <br>
-                        <div>Team Yor :</div>
+                        <div>Team Abbr. :</div>
                         <input type="text" required>
                         <!--<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label formlol">
                           <input class="mdl-textfield__input" type="text" pattern="" id="name">
