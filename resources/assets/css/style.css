@@ -1,0 +1,254 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(/font/Roboto-Regular.ttf);
+}
+
+body {
+    background: url(/img/Teemo-Classic-Skin.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+body,
+button {
+    font-family: "Roboto", "Boon300", sans-serif !important;
+}
+
+div,
+p {
+    position: fixed;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+input {
+    font-size: 3vmin;
+    margin: 0;
+    border: 0;
+    border-bottom: 2px solid #000000;
+}
+
+overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1000;
+    background: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), transparent);
+}
+
+overlay.form-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 100;
+}
+
+text {
+    font-family: 'Boon300';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.text.main {
+    color: #ffffff;
+    opacity: 0;
+}
+
+.text.title {
+    font-size: 6vmin;
+}
+
+.text.title.main {
+    top: 15%;
+    left: 8%;
+}
+
+.text.content {
+    font-size: 3vmin;
+    text-align: justify;
+    width: 40%;
+    line-height: 1.4;
+}
+
+.text.content.main {
+    top: 30%;
+    left: 8%;
+}
+
+.button > button {
+    display: inline-block;
+}
+
+.button.main {
+    top: 75%;
+    left: 8%;
+    width: 39%;
+    height: 10%;
+    text-align: left;
+}
+
+#register {
+    width: 40%;
+    height: 70%;
+    font-size: 1.5em;
+    background-color: #fec009;
+    color: #000000;
+}
+
+#register:hover {
+    background: white;
+}
+
+#more_info {
+    width: 40%;
+    height: 70%;
+    font-size: 1.5em;
+    margin-left: 20px;
+    background: transparent;
+    border: solid #fec009;
+    color: #fff;
+    text-align: center;
+}
+
+#more_info:hover {
+    background: #fec009;
+    boder: none;
+    color: black;
+}
+
+.formlol {
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    width: 40%;
+}
+
+.container {
+    z-index: 101;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+}
+
+.close {
+    position: absolute;
+    cursor: pointer;
+    width: 6vmin;
+    height: 6vmin;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 20px 20px;
+}
+
+.close:before {
+    content: '';
+    position: absolute;
+    top: 4vmin;
+    right: 0.5vmin;
+    height: 2px;
+    width: 7vmin;
+    background-color: #000000;
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+}
+
+.close:after {
+    content: '';
+    position: absolute;
+    top: 4vmin;
+    right: 0.5vmin;
+    height: 2px;
+    width: 7vmin;
+    background-color: #000000;
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+    -moz-transform: rotateZ(-45deg);
+}
+
+.form {
+    width: 60%;
+    height: 60%;
+    position: relative;
+    background-color: #ffffff;
+    top: 20%;
+    left: 20%;
+    overflow: hidden;
+}
+
+.page-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.page > .text.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    top: 15%;
+}
+
+.page > .text.content {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 80%;
+}
+
+.page > .text.content > div {
+    position: static;
+    display: inline;
+    float: left;
+}
+
+.page > input {
+    display: inline;
+}
+
+.form > button {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    border: 0;
+    border-radius: 2px;
+    background-color: #00a652;
+    font-size: 3vmin;
+    width: 20%;
+    height: 10%;
+    color: white;
+}
+
+.form > button:hover {
+    color: black;
+}
+
+.process {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    margin-top: 20px;
+}
+
+.page > .text.content.full-one > input {
+    width: 100%;
+}
