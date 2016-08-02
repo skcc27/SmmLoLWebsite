@@ -15,7 +15,7 @@
 @section('content')
     <overlay></overlay>
     <div class="text title main">Sammarnmitr League of Legends Competition</div>
-    <div class="text content main">&emsp;&emsp;การแข่งขันครั้งนี้จัดขึ้นโดยชุมนุมคอมพิวเตอร์ โรงเรียนสวนกุหาบวิทยาลัย
+    <div class="text content main">&emsp;&emsp;การแข่งขันครั้งนี้จัดขึ้นโดยชุมนุมคอมพิวเตอร์ โรงเรียนสวนกุหลาบวิทยาลัย
         เพื่อเฟ้นหาทีมสายเลือดชมพู-ฟ้า ผู้เป็นหนึ่งในเกม League of Legend เกมสไดล์ MOBA
         ที่กำลังได้รับความนิยมอยู่ในปัจจุบัน
         ภายใต้การสนับสนุนของ Garena ค่ายเกมออนไลน์ยักษ์ใหญ่ของประเทศไทย เพื่อชิงรางวัลมูลค่ารวมกว่า 6,000 บาท
