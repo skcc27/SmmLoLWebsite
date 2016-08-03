@@ -7,16 +7,20 @@
 	<body>
 		<overlay class="main-page"></overlay>
 		<overlay class="start-main-page"></overlay>
-		<div id="#firstPg">
-			<div id="contentMainContainer">
-				<p class="main-page title">Sammarnmitr League of Legends</p>
-				<p class="main-page sub-title">Competition</p>
-				<p class="main-page content">This is descriptions...</p>
+		<div id="Pg">
+			<div class="section">
+				<div id="contentMainContainer">
+					<p class="main-page title">Sammarnmitr League of Legends</p>
+					<p class="main-page sub-title">Competition</p>
+					<p class="main-page content">This is descriptions...</p>
+				</div>
+				<div id="btnMainContainer">
+					<button id="registerBtn" go="registerForm">Register</button>
+					<button id="moreInfoBtn">More Info</button>
+				</div>
 			</div>
-		</div>
-		<div id="btnMainContainer">
-			<button id="registerBtn" go="registerForm">Register</button>
-			<button id="moreInfoBtn">More Info</button>
+			<div class="section">
+			</div>
 		</div>
 		<div id="registerForm" class="pop-up">
 			<overlay></overlay>
@@ -310,17 +314,18 @@
 							</p>
 						</div>
 						<div id="ruleAccContainer">
-							<input type="checkbox" required id="accept" />
-							<p class="content">I accept.</p>
-						</div>
+							<p><input type="checkbox" required id="accept" />
+							<label class="content">I accept.</label>
+						</p>
 					</div>
-				</form>
-			</div>
+				</div>
+			</form>
 		</div>
-		<div id="requiredCaution" class="caution">Please fill this information</div>
-		<script type="text/javascript" src="jquery-3.1.0.js"></script>
-		<script type="text/javascript" src="script.js"></script>
-		<script type="text/javascript" src="sc.js"></script>
-		<script type="text/javascript" src="collector.js"></script>
-	</body>
+	</div>
+	<div id="requiredCaution" class="caution">Please fill this information</div>
+	<script type="text/javascript" src="jquery-3.1.0.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="sc.js"></script>
+	<script type="text/javascript" src="collector.js"></script>
+</body>
 </html>
