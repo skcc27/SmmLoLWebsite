@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Validator;
 
 class TeamController extends Controller
 {
+
+    private $optionalNames = [
+        "summoner_name_6" => 'min:3|max:16',
+        "phone_6" => 'numeric|size:10',
+    ];
+
     public function register(Request $request)
     {
         /** @var \Illuminate\Validation\Validator $validator */
@@ -22,7 +28,7 @@ class TeamController extends Controller
             'tag' => 'required|min:3|max:6',
             'password' => 'required|min:4|max:24'
         ];
-        $arr = $arr + $this->memberValidationRules();
+        $arr = $arr + $this->memberValidationRules() + $this->optionalNames;
         $validator = Validator::make($request->all(), $arr);
         if ($validator->fails())
             return redirect('/team/register')->with(['status' => 'danger', 'message' => 'Invalid data!']);
@@ -81,7 +87,7 @@ class TeamController extends Controller
             "phone" => 'required|numeric|size:10',
             "facebook" => 'required'
         ];
-        for ($i = 1; $i <= 6; $i++) foreach ($names as $name => $val) $validation[$name . '_' . $i] = $val;
+        for ($i = 1; $i <= 5; $i++) foreach ($names as $name => $val) $validation[$name . '_' . $i] = $val;
         return $validation;
     }
 }
