@@ -16,7 +16,7 @@
     <overlay></overlay>
     <div class="text title main">Sammarnmitr League of Legends Competition</div>
     <div class="text content main">
-        @include('index.intro')
+        @include('index_intro')
     </div>
     <div class="button text main">
         <button id="register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Register</button>
@@ -26,6 +26,6 @@
     <div class="image main"></div>
     <overlay class="form-overlay"></overlay>
     <div class="container">
-        @include('index.form')
+        @include('index_form')
     </div>
 @endsection
