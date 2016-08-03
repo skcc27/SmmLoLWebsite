@@ -4,9 +4,13 @@
 }
 
 body {
-	background: url(img/Teemo-Classic-Skin.jpg) no-repeat center center fixed;
-	background-size: cover;
 	overflow: hidden;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
 }
 
 * {
@@ -38,6 +42,7 @@ overlay {
 }
 
 overlay.main-page {
+	position: absolute;
 	background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), transparent);
 	z-index: -100;
 }
@@ -256,6 +261,11 @@ div.section {
 	height: 100%;
 }
 
+div.section.teemo {
+	background: url(img/Teemo-Classic-Skin.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
 #Pg {
 	position: fixed;
 	top: 0;
@@ -449,4 +459,130 @@ div.checkbox.check:before {
 	transform: translateX(-50%);
 	border: 0.5em solid transparent;
 	border-top: 0.8em solid #FFF9B1;
+}
+
+/*
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+*/
+overlay.second-page {
+	position: absolute;
+	z-index: -100;
+}
+
+overlay.second-page.left {
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), transparent);
+}
+
+overlay.second-page.right {
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), transparent);
+}
+
+div.menu-bar {
+	position: absolute;
+	top: 2%;
+	left: 10%;
+	width: 80%;
+	height: 10%;
+	z-index: 100;
+}
+
+div.menu-bar > p.title {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 20%;
+	height: auto;
+	transform: translateX(-50%) translateY(-50%);
+	cursor: pointer;
+	color: #FFFFFF;
+}
+
+div.menu-bar > p.title:hover {
+	transition: all 0.5s;
+	color: #FFC107;
+}
+
+div.menu-bar > p.title:active {
+	transition: all 0.1s;
+	color: #000000;
+}
+
+div.menu-bar > div.menu {
+	position: absolute;
+	width: 35%;
+	height: 80%;
+	top: 10%;
+	border: 0.2em solid #FFC107;
+	border-left: 0;
+	border-right: 0;
+}
+
+div.menu-bar > div.menu > div {
+	position: relative;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+div.menu-bar > div.menu > div > p.content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-indent: 0;
+	transform: translateX(-50%) translateY(-50%);
+	margin: 0;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+div.menu-bar > div.menu > div:hover > p.content {
+	transition: all 0.5s;
+	color: #FFDC73
+}
+
+div.menu-bar > div.menu > div:active > p.content {
+	transition: all 0.1s;
+	color: #FFC107;
+}
+
+div.menu-bar > div.menu.left {
+	left: 0;
+}
+
+div.menu-bar > div.menu.right {
+	right: 0;
+}
+
+#contentContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+#contentContainer > div.content-page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#page1 > p.content {
+	position: absolute;
+	right: 10%;
+	top: 30%;
+	width: 30%;
 }

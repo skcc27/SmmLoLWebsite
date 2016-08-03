@@ -5,10 +5,10 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<overlay class="main-page"></overlay>
 		<overlay class="start-main-page"></overlay>
 		<div id="Pg">
-			<div class="section">
+			<overlay class="main-page"></overlay>
+			<div class="section teemo">
 				<div id="contentMainContainer">
 					<p class="main-page title">Sammarnmitr League of Legends</p>
 					<p class="main-page sub-title">Competition</p>
@@ -32,7 +32,7 @@
 					<div id="progress"><div></div></div>
 				</div>
 				<p class="title" style="margin-top: 0.5em;">Register</p>
-				<form action="/" method="post">
+				<form action="/team/register" method="post">
 					<div class="page" role="team">
 						<p class="sub-title">Team Information</p>
 						<div class="field-wrap">

@@ -37,7 +37,7 @@ function check() {
 $("#nextBtn[register='true']").on("click", function() {
 	if($("#ruleAccContainer > div.checkbox").hasClass('check')) {
 		if(check()) {
-
+			$("#registerForm").find("form").submit();
 		}
 	}
 });
