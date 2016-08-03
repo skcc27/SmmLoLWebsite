@@ -1,0 +1,421 @@
+@font-face {
+	font-family: "Roboto";
+	src: url(roboto/Roboto-Regular.ttf);
+}
+
+body {
+	background: url(img/Teemo-Classic-Skin.jpg) no-repeat center center fixed;
+	background-size: cover;
+	overflow: hidden;
+}
+
+* {
+	font-family: "Roboto", "Boon300", sans-serif;
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+button,
+input {
+	outline: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+overlay.main-page {
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), transparent);
+	z-index: -100;
+}
+
+overlay.start-main-page {
+	background-color: transparent;
+	z-index: 10;
+}
+
+close {
+	cursor: pointer;
+}
+
+close:hover {
+	transition: background-color 0.5s;
+	background-color: #000000;
+}
+
+close:active {
+	transition: background-color 0.1s;
+	background-color: #404040;
+}
+
+close:before,
+close:after {
+	content: '';
+	position: absolute;
+	width: 0.1em;
+	height: 100%;
+	margin-left: -0.05em;
+	left: 50%;
+	background-color: #000000;
+	transform: rotateZ(45deg);
+}
+
+close:after {
+	transform: rotateZ(-45deg);
+}
+
+close:hover:before,
+close:hover:after {
+	transition: background-color 0.5s;
+	background-color: #FFFFFF;
+}
+
+p.title {
+	font-size: 2.5em;
+	font-weight: bolder;
+	margin: 0;
+	text-align: center;
+}
+
+p.sub-title {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0;
+	text-align: left;
+}
+
+p.content {
+	font-size: 1.5em;
+	text-indent: 3em;
+	margin-top: 2em;
+}
+
+p.main-page {
+	color: #FFFFFF;
+	display: none;
+	text-align: left;
+}
+
+p.title.main-page {
+	font-size: 3.5em;
+}
+
+p.sub-title.main-page {
+	font-size: 2.75em;
+}
+
+div.pop-up {
+	display: none;
+	z-index: 100;
+}
+
+div.pop-up-content {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background-color: #FFFFFF;
+	transform: translateX(-50%) translateY(-50%);
+	overflow: hidden;
+}
+
+div.pop-up-content > close {
+	position: absolute;
+	z-index: 1000;
+	right: 1em;
+	top: 1em;
+	height: 3em;
+	width: 3em;
+}
+
+form {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+form > div.page {
+	position: absolute;
+	top: 10%;
+	bottom: 0;
+	height: auto;
+	width: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 3%;
+}
+
+div.page > p.sub-title {
+	margin-bottom: 1em;
+}
+
+div.field-wrap {
+	position: relative;
+	margin-bottom: 1.5em;
+}
+
+div.field-wrap > label {
+	position: absolute;
+	left: 13px;
+	color: #707070;
+	transform: translateY(6px);
+	transition: all 0.25s ease;
+	-webkit-backface-visibility: hidden;
+	pointer-events: none;
+	font-size: 1.25em;
+}
+
+label.active {
+	transform: translateY(-1.5em) !important;
+	left: 2px !important;
+	font-size: 0.75em !important;
+}
+
+label.active > span.req {
+	opacity: 0 !important;
+}
+
+label.highlight {
+	color: #000000 !important;
+}
+
+div.field-wrap > label > span.req {
+	margin: 0.1em;
+	color: #FF0000;
+}
+
+div.field-wrap > input,
+textarea {
+	font-size: 1.25em;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 5px 10px;
+	background: none;
+	background-image: none;
+	border: 1px solid #909090;
+}
+
+div.field-wrap > input:focus,
+textarea:focus {
+	transition: border-color .25s ease, box-shadow .25s ease;
+	border-color: #000000;
+}
+
+div.field {
+	width: 100%;
+}
+
+div.field:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+div.field.two > div.field-wrap {
+	float: left;
+	width: 48%;
+	margin-right: 4%;
+}
+
+div.field > div:last-child {
+	margin-right: 0 !important;
+}
+
+div.tof {
+	position: absolute;
+	border: 1px solid #000000;
+	padding: 0.25em;
+	font-size: 1em;
+	width: 70%;
+	height: 50%;
+	left: 15%;
+	top: 15%;
+	overflow-y: scroll;
+}
+
+#firstPg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#contentMainContainer {
+	position: absolute;
+	top: 10%;
+	left: 5%;
+}
+
+#btnMainContainer {
+	position: absolute;
+	bottom: 15%;
+	left: 5%;
+	width: 100%;
+}
+
+#btnMainContainer > * {
+	margin-left: 2em;
+}
+
+#btnMainContainer > *:first-child {
+	margin-left: 0;
+}
+
+#btnMainContainer > button {
+	color: #FFFFFF;
+	font-size: 2em;
+	width: 20%;
+	height: 2.5em;
+	border: 0.1em solid #FFC107;
+	background-color: transparent;
+}
+
+#registerBtn {
+	color: #000000 !important;
+	background-color: #FFC107 !important;
+}
+
+#moreInfoBtn {
+	transition: background-color 0.5s, border-color 0.5s
+}
+
+#moreInfoBtn:hover {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+#moreInfoBtn:active {
+	transition: background-color 0.1s, border-color 0.1s, box-shadow 0.1s;
+	background-color: #000000 !important;
+	border-color: #000000;
+	box-shadow: inset 0 0 1em #000000;
+}
+
+#loginBtnContainer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 2%;
+}
+
+#nextBtn,
+#backBtn {
+	position: absolute;
+	top: 80%;
+	right: 10%;
+	width: 6em;
+	height: 10%;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background-color: #00A652;
+	font-size: 1.5em;
+	z-index: 1000;
+}
+
+#backBtn {
+	right: 12.5em;
+	color: #00A652;
+	background-color: transparent;
+}
+
+#registerBtn:hover,
+#nextBtn:hover,
+#backBtn:hover {
+	transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+	background-color: #FFFFFF !important;
+	border-color: #FFFFFF;
+	color: #000000;
+}
+
+#registerBtn:active,
+#nextBtn:active,
+#backBtn:active {
+	transition: background-color 0.1s, border-color 0.1s;
+	background-color: #808080 !important;
+	border-color: #808080;
+}
+
+#progress {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF000;
+	border: 0;
+	border-top: 1px solid #000000;
+}
+
+#progress > div {
+	height: 100%;
+	width: 0;
+	background-color: #00A652
+}
+
+#page-final {
+	position: absolute;
+	top: 10%;
+	bottom: 0;
+	height: auto;
+	width: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 3%;
+}
+
+#page-final > p.sub-title {
+	margin-bottom: 1em;
+}
+
+#ruleAccContainer {
+	position: absolute;
+	left: 20%;
+	top: 70%;
+}
+
+#ruleAccContainer > * {
+	display: inline;
+}
+
+.caution {
+	position: fixed;
+	z-index: 10000;
+	color: #FF0000;
+	font-size: 1em;
+	padding: 0.5em 1em;
+	background-color: #FFF9B1;
+	border: 0.1em solid #FFF9B1;
+	border-radius: 0.2em;
+	line-height: 1em;
+	margin-top: -3.25em;
+}
+
+.caution:before {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: -1.25em;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 0.5em solid transparent;
+	border-top: 0.8em solid #FFF9B1;
+}
