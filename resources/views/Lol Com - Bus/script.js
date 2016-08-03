@@ -50,6 +50,24 @@ $("#moreInfoBtn").on("click", function() {
 	}, 1000);
 });
 
+$("div.checkbox").on("click", function() {
+	$(this).toggleClass('check');
+});
+
+var info = {
+	"fname": "first_name",
+	"lname": "last_name",
+	"no": "batch",
+	"sumname": "summoner_name",
+	"telnum": "phone",
+	"fb": "facebook"
+};
+
+$("div.page[role!='team']").find("input[role]").each(function(index, value) {
+	value = $(value);
+	value.attr("name", info[value.attr("role")] + "_" + value.parents("div.page").attr("role").split("player").join(""));
+})
+
 $(window).on("click", function() {
 	$(".caution").fadeOut(500);
 });

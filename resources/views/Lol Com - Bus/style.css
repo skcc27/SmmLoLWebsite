@@ -397,10 +397,33 @@ div.section {
 	position: absolute;
 	left: 20%;
 	top: 70%;
+	width: 60%;
 }
 
-#ruleAccContainer > * {
-	display: inline;
+div.checkbox {
+	position: absolute;
+	height: 1.25em;
+	width: 1.25em;
+	border: 1px solid #000000;
+	cursor: pointer;
+}
+
+div.checkbox.check:before {
+	content: '';
+	position: absolute;
+	left: 0.5em;
+	top: 0;
+	height: 100%;
+	border: 1px solid #000000;
+	transform: rotateZ(45deg);
+}
+
+#ruleAccContainer > p {
+	position: absolute;
+	left: 5%;
+	width: 90%;
+	top: 0;
+	margin: 0;
 }
 
 .caution {

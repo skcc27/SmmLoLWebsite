@@ -81,13 +81,13 @@ function goToPage(index, time) {
 		$("form").animate({
 			"left": (index * -100) + "%"
 		}, time);
-		$("#nextBtn").text("Next");
+		$("#nextBtn").attr("register", "false").text("Next");
 		if ($(".page").length != index) {
 			$("#progress").find("div").animate({
 				"width": (100 / ($(".page").length - 1) * index) + "%"
 			}, time);
 		} else {
-			$("#nextBtn").text("Register");
+			$("#nextBtn").attr("register", "true").text("Register");
 		}
 		INDEX = index;
 	}
@@ -97,6 +97,6 @@ $("#nextBtn").on("click", function() {
 	goToPage(INDEX + 1, 1000);
 });
 
-$("#backBtn").on("click", function() {
+$("#backBtn[register='false']").on("click", function() {
 	goToPage(INDEX - 1, 1000);
 });
