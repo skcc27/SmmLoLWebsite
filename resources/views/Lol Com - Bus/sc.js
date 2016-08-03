@@ -1,3 +1,31 @@
+function checkFormat(ele, e) {
+	if (ele.attr("role") == "telnum") {
+		if (ele.val().split()) {
+			ele.prev("label").append("<span></span>");
+		}
+	}
+}
+
+$('form').find('input[role=telnum]').on("keydown", function(e) {
+	var $this = $(this),
+		length = $this.val().split("").length;
+
+	if (length >= 16) {
+		return false;
+	}
+	if (!(e.keyCode >= 48 && e.keyCode <= 57) && !(e.keyCode >= 96 && e.keyCode <= 105) && e.keyCode != 8) {
+		return false;
+	}
+	if ((length == 3 || length == 9) && e.keyCode != 8) {
+		$this.val($this.val() + " - ");
+		return true;
+	}
+	if (e.keyCode == 8 && (length == 7 || length == 13)) {
+		$this.val($this.val().split("").slice(0, length - 3).join(""));
+		return true;
+	}
+});
+
 $('form').find('input, textarea').on('keyup blur focus', function(e) {
 	var $this = $(this),
 		label = $this.prev('label');
@@ -8,6 +36,7 @@ $('form').find('input, textarea').on('keyup blur focus', function(e) {
 		} else {
 			label.addClass('active highlight');
 		}
+		checkFormat($this, e);
 	} else if (e.type === 'blur') {
 		if ($this.val() === '') {
 			label.removeClass('active highlight');
