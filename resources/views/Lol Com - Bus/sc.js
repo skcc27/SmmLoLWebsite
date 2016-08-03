@@ -6,11 +6,20 @@ function checkFormat(ele, e) {
 	}
 }
 
+$('form').find('input[role=steamname]').on("keydown", function(e) {
+	var $this = $(this),
+		length = $this.val().split("").length;
+
+	if (length >= 4 && e.keyCode != 8) {
+		return false;
+	}
+});
+
 $('form').find('input[role=telnum]').on("keydown", function(e) {
 	var $this = $(this),
 		length = $this.val().split("").length;
 
-	if (length >= 16) {
+	if (length >= 16 && e.keyCode != 8) {
 		return false;
 	}
 	if (!(e.keyCode >= 48 && e.keyCode <= 57) && !(e.keyCode >= 96 && e.keyCode <= 105) && e.keyCode != 8) {
@@ -23,6 +32,18 @@ $('form').find('input[role=telnum]').on("keydown", function(e) {
 	if (e.keyCode == 8 && (length == 7 || length == 13)) {
 		$this.val($this.val().split("").slice(0, length - 3).join(""));
 		return true;
+	}
+});
+
+$('form').find('input[role=no]').on("keydown", function(e) {
+	var $this = $(this),
+		length = $this.val().split("").length;
+
+	if (length >= 3 && e.keyCode != 8) {
+		return false;
+	}
+	if (!(e.keyCode >= 48 && e.keyCode <= 57) && !(e.keyCode >= 96 && e.keyCode <= 105) && e.keyCode != 8) {
+		return false;
 	}
 });
 
