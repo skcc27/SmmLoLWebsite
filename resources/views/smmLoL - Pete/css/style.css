@@ -1,0 +1,117 @@
+.left {
+    float: left;
+    margin-left: 50px;
+}
+.right {
+    float: right;
+    margin-right: 50px;
+}
+.main {}
+.title {
+    margin: 80px 40px 40px 40px;
+    color: white;
+    font-family: 'Prompt', serif;
+    font-weight: 400;
+    font-size: 3em;
+}
+.intro {
+    margin: 0px 10px 20px 40px;
+    color: white;
+    font-family: 'Prompt', serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1.4;
+}
+.description {
+    margin: 60px 10px 20px 40px;
+    color: white;
+    font-family: 'Prompt', serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1.4;
+}
+.lol {
+    color: #ffd54f;
+}
+.subtitle {
+    color: white;
+    margin: 40px;
+    font-family: 'Prompt', serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    vertical-align: middle;
+}
+.btn-container {
+    margin: 40px
+}
+.lol-button {
+    height: 50px;
+    width: 80%;
+    font-family: 'Prompt', serif;
+    font-weight: 500;
+    font-size: 2em;
+}
+.register {
+    color: black;
+    background: #ffd54f;
+}
+.register:hover {
+    color: white;
+    background: #ff4081;
+}
+.more-info {
+    color: white;
+    border: 2px solid #ffd54f;
+}
+.more-info:hover {
+    color: black;
+    background: #ffd54f;
+}
+.sponsor {
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Maitree', serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+.sponsor> img {
+    height: 120px;
+    margin: 20px;
+}
+.mdl-data-table th {
+    background: #ffd54f;
+    color: white;
+    font-family: 'Prompt', serif;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+table {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px;
+}
+.schedule {
+    margin: 40px;
+    color: black;
+    font-family: 'Maitree', serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+.fb {
+    margin: 0 auto;
+    color: white;
+    font-family: 'Prompt', serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-decoration: none;
+}
+.fb:hover {
+    color: #ffd54f;
+    font-family: 'Prompt', serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-decoration: none;
+}
+.fb-logo {
+    height: 48px;
+}
