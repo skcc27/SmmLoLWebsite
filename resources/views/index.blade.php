@@ -23,6 +23,12 @@
         <button id="more_info" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">More info
         </button>
     </div>
+    <div class="sponsor left">Sponserd by
+      <img src="img/sponsor1.png" alt="Garena">
+      <img src="img/sponsor2.png" alt="Suabkularb Wittayalai School">
+      <img src="img/sponsor3.png" alt="SK Com Club">
+      <img src="img/sponsor4.png" alt="Samarnmitr">
+    </div>
     <div class="image main"></div>
     <overlay class="form-overlay"></overlay>
     <div class="container">
