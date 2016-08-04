@@ -1,4 +1,5 @@
 <section class="background" id="intro">
+    @include('lol.form.main')
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -22,7 +23,8 @@
                 <div class="btn-container col-md-6">
                     <div class="col-md-6 center">
                         <!-- Need to link with register ajax. -->
-                        <button id="register"
+                        <button id="registerBtn"
+                                go="registerForm"
                                 class="lol-button register mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
                             Register
                         </button>

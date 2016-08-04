@@ -81,22 +81,23 @@ function goToPage(index, time) {
 		$("form").animate({
 			"left": (index * -100) + "%"
 		}, time);
-		$("#nextBtn").attr("register", "false").text("Next");
+		$("#lolNextBtn").attr("register", "false").text("Next");
 		if ($(".page").length != index) {
-			$("#progress").find("div").animate({
+			$("#lol-progress").find("div").animate({
 				"width": (100 / ($(".page").length - 1) * index) + "%"
 			}, time);
 		} else {
-			$("#nextBtn").attr("register", "true").text("Register");
+			$("#lolNextBtn").attr("register", "true").text("Register");
 		}
 		INDEX = index;
 	}
 }
 
-$("#nextBtn").on("click", function() {
+$("#lolNextBtn").on("click", function () {
 	goToPage(INDEX + 1, 1000);
 });
 
-$("#backBtn[register='false']").on("click", function() {
+$("#lolBackBtn").on("click", function () {
+	if ($("#lolNextBtn").attr('register') == "true") return;
 	goToPage(INDEX - 1, 1000);
 });

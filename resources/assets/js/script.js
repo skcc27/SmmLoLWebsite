@@ -17,10 +17,10 @@ $("#registerBtn").on("click", function() {
 });
 
 $("close").on("click", function() {
-	ClosePopup($(this).parents(".pop-up"), 800);
+	ClosePopup($(this).parents(".lol-pop-up"), 800);
 });
 
-$(".pop-up").find("overlay").on("click", function() {
+$(".lol-pop-up").find("overlay").on("click", function () {
 	ClosePopup($(this).parent(), 800);
 });
 
@@ -50,7 +50,7 @@ $("#moreInfoBtn").on("click", function() {
 	}, 1000);
 });
 
-$("div.checkbox").on("click", function() {
+$("div.lol-checkbox").on("click", function () {
 	$(this).toggleClass('check');
 });
 

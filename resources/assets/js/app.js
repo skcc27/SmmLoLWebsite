@@ -1,4 +1,4 @@
-var $ = window.$ = global.jQuery = require('jquery');
+var $ = window.$ = global.jQuery = require('jquery.2');
 require('bootstrap-sass');
 
 $(document).ready(function () {

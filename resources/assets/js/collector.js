@@ -1,4 +1,5 @@
 function showCaution(ele) {
+    console.log('caution');
 	var index = ["team", "player1", "player2", "player3", "player4", "player5", "player6", "rule"];
 	goToPage(index.indexOf($(ele).parents(".page").attr("role")), 500);
 	setTimeout(function() {
@@ -34,10 +35,14 @@ function check() {
 	return pass;
 }
 
-$("#nextBtn[register='true']").on("click", function() {
-	if($("#ruleAccContainer > div.checkbox").hasClass('check')) {
-		if(check()) {
+$("#lolNextBtn").on("click", function () {
+    if ($("#lolNextBtn").attr('register') == 'false') return;
+    console.log('Clicked');
+    if ($("#ruleAccContainer").find("div").hasClass('check')) {
+        console.log('Trying to check');
+        //if(check()) {
+        console.log('Success!');
 			$("#registerForm").find("form").submit();
-		}
+        //}
 	}
 });
