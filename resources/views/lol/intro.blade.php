@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col col-md-6">
-                    <h1 class="title">Samarnmitr <span class="lol">League of Legend</span> Competition</h1>
+                    <h1 class="title">Samarnmitr <span class="lol">League of Legends</span> Competition</h1>
                 </div>
             </div>
             <div class="row">
