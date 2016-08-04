@@ -1,38 +1,102 @@
-'use strict';
-function submit() {
-
+function checkFormat(ele, e) {
+	if (ele.attr("role") == "telnum") {
+		if (ele.val().split()) {
+			ele.prev("label").append("<span></span>");
+		}
+	}
 }
 
-var index = 0,
-    all = $(".page").length;
-$(".process").text((index + 1) + " from " + all);
+$('form').find('input[role=steamname]').on("keydown", function(e) {
+	var $this = $(this),
+		length = $this.val().split("").length;
 
-function goToPage(n, ele) {
-    if (n < all) {
-        $(".page-container").animate({
-            "left": "-" + n * 100 + "%"
-        }, 1000);
-        $(".process").text((n + 1) + " from " + all);
-    }
-    if (n === all - 1) {
-        ele.text("Submit");
-        submit();
-        return n - 1;
-    } else {
-        ele.text("Next");
-    }
-    return n;
+	if (length >= 4 && e.keyCode != 8) {
+		return false;
+	}
+});
+
+$('form').find('input[role=telnum]').on("keydown", function(e) {
+	var $this = $(this),
+		length = $this.val().split("").length;
+
+	if (length >= 16 && e.keyCode != 8) {
+		return false;
+	}
+	if (!(e.keyCode >= 48 && e.keyCode <= 57) && !(e.keyCode >= 96 && e.keyCode <= 105) && e.keyCode != 8) {
+		return false;
+	}
+	if ((length == 3 || length == 9) && e.keyCode != 8) {
+		$this.val($this.val() + " - ");
+		return true;
+	}
+	if (e.keyCode == 8 && (length == 7 || length == 13)) {
+		$this.val($this.val().split("").slice(0, length - 3).join(""));
+		return true;
+	}
+});
+
+$('form').find('input[role=no]').on("keydown", function(e) {
+	var $this = $(this),
+		length = $this.val().split("").length;
+
+	if (length >= 3 && e.keyCode != 8) {
+		return false;
+	}
+	if (!(e.keyCode >= 48 && e.keyCode <= 57) && !(e.keyCode >= 96 && e.keyCode <= 105) && e.keyCode != 8) {
+		return false;
+	}
+});
+
+$('form').find('input, textarea').on('keyup blur focus', function(e) {
+	var $this = $(this),
+		label = $this.prev('label');
+
+	if (e.type === 'keyup') {
+		if ($this.val() === '') {
+			label.removeClass('active highlight');
+		} else {
+			label.addClass('active highlight');
+		}
+		checkFormat($this, e);
+	} else if (e.type === 'blur') {
+		if ($this.val() === '') {
+			label.removeClass('active highlight');
+		} else {
+			label.removeClass('highlight');
+		}
+	} else if (e.type === 'focus') {
+
+		if ($this.val() === '') {
+			label.removeClass('highlight');
+		} else if ($this.val() !== '') {
+			label.addClass('highlight');
+		}
+	}
+});
+
+var INDEX = 0;
+
+function goToPage(index, time) {
+	if ($(".page").length >= index && index >= 0) {
+		$("form").animate({
+			"left": (index * -100) + "%"
+		}, time);
+		$("#nextBtn").attr("register", "false").text("Next");
+		if ($(".page").length != index) {
+			$("#progress").find("div").animate({
+				"width": (100 / ($(".page").length - 1) * index) + "%"
+			}, time);
+		} else {
+			$("#nextBtn").attr("register", "true").text("Register");
+		}
+		INDEX = index;
+	}
 }
 
-
-$("#register").on("click", function () {
-    $("overlay.form-overlay,div.container").fadeIn(800);
-});
-$(".close").on("click", function () {
-    $("overlay.form-overlay,div.container").fadeOut(800);
+$("#nextBtn").on("click", function() {
+	goToPage(INDEX + 1, 1000);
 });
 
-
-$("#next").on("click", function () {
-    index = goToPage(index + 1, $(this));
+$("#backBtn[register='false']").on("click", function() {
+	goToPage(INDEX - 1, 1000);
 });

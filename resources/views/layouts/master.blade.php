@@ -11,7 +11,7 @@
 @yield('metadata')
 <!-- CSS -->
     <!-- TODO: Merge google font into sass -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    @yield('prestylesheet')
     <link href="/css/app.css" rel="stylesheet" type="text/css">
     <link href="/css/all.css" rel="stylesheet" type="text/css">
     @yield('stylesheet')
@@ -31,6 +31,7 @@
     </div>
 @show
 <!-- JavaScript -->
+@yield('prescript')
 <script src="/js/app.js"></script>
 <script src="/js/all.js"></script>
 @yield('script')
