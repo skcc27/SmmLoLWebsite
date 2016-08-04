@@ -24,7 +24,7 @@
 @endsection
 
 @section('content')
-    @include('lol.form')
+    @include('lol.intro')
     @include('lol.info')
     @include('lol.schedule')
     @include('lol.faq')
