@@ -252,3 +252,27 @@ text {
 .page > .text.content.full-one > input {
     width: 100%;
 }
+
+.left {
+    float: left;
+    margin-left: 50px;
+}
+.right {
+    float: right;
+    margin-right: 50px;
+}
+.sponsor {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Maitree', serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+.sponsor > img {
+  height: 120px;
+  margin: 20px;
+}
+
