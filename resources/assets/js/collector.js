@@ -36,17 +36,17 @@ function check() {
 }
 
 function send_data(data) {
-	var data_array = data.split("&"),
+    /*var data_array = data.split("&"),
 	data_json = {};
 	for(var i = 0; i < data_array.length; i++) {
 		data_json[data_array[i].split("=")[0]] = data_array[i].split("=")[1];
-	}
+     }*/
 	$.ajax({
 		type: "POST",
-		url: url,
-		data: json-data,
-		success: function () {
-			alert("Success!");
+        url: '/team/register',
+        data: data,
+        success: function (msg) {
+            alert('Submission result: ' + msg.message);
 		}
 	});
 }
@@ -57,7 +57,7 @@ $("#lolNextBtn").on("click", function () {
     if ($("#ruleAccContainer").find("div").hasClass('check')) {
         console.log('Trying to check');
         if(check()) {
-        console.log('Success!');
+            console.log('Success!');
 			send_data($("#registerForm").find("form").serialize());
         }
 	}
