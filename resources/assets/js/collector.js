@@ -35,14 +35,22 @@ function check() {
 	return pass;
 }
 
+function send_data(data) {
+	var data_array = data.split("&"),
+	data_json = {};
+	for(var i = 0; i < data_array.length; i++) {
+		data_json[data_array[i].split("=")[0]] = data_array[i].split("=")[1];
+	}
+	console.log(data_json);
+}
+
 $("#lolNextBtn").on("click", function () {
     if ($("#lolNextBtn").attr('register') == 'false') return;
     console.log('Clicked');
     if ($("#ruleAccContainer").find("div").hasClass('check')) {
         console.log('Trying to check');
-        //if(check()) {
+        if(check()) {
         console.log('Success!');
-			$("#registerForm").find("form").submit();
-        //}
+			send_data($("#registerForm").find("form").serialize());
 	}
 });
