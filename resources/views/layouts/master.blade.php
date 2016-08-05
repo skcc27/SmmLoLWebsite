@@ -12,24 +12,15 @@
 <!-- CSS -->
     <!-- TODO: Merge google font into sass -->
     @yield('prestylesheet')
-    @section('mainstylesheet')
     <link href="/css/app.css" rel="stylesheet" type="text/css">
     <link href="/css/all.css" rel="stylesheet" type="text/css">
-        @show
     @yield('stylesheet')
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    @yield('headscript')
-    <!-- JavaScript -->
-        @yield('prescript')
-    @section('mainscript')
-        <script src="/js/app.js"></script>
-        <script src="/js/all.js"></script>
-    @show
-    @yield('script')
     @yield('head')
+
 </head>
 <body>
 @section('content')
@@ -39,5 +30,10 @@
         </div>
     </div>
 @show
+<!-- JavaScript -->
+@yield('prescript')
+<script src="/js/app.js"></script>
+<script src="/js/all.js"></script>
+@yield('script')
 </body>
 </html>

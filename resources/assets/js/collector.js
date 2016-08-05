@@ -34,7 +34,7 @@ function check() {
 	}
 	return pass;
 }
-/*
+
 function send_data(data) {
 	var data_array = data.split("&"),
 	data_json = {};
@@ -59,6 +59,6 @@ $("#lolNextBtn").on("click", function () {
         if(check()) {
         console.log('Success!');
 			send_data($("#registerForm").find("form").serialize());
+        }
 	}
 });
-*/
