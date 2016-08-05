@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		-moz-transform: translateX(-50%) translateY(-50%);
+	}
+	.center-horizontal {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%) translateY(0);
+		-webkit-transform: translateX(-50%) translateY(0);
+		-moz-transform: translateX(-50%) translateY(0);
+	}
+	.center-vertical {
+		position: absolute;
+		top: 50%;
+		transform: translateX(0) translateY(-50%);
+		-webkit-transform: translateX(0) translateY(-50%);
+		-moz-transform: translateX(0) translateY(-50%);
+	}
+	nav.nav-bar {
+		width: 100%;
+	}
+	ul.nav {
+		display: block;
+		position: fixed;
+		width: 80%;
+		text-align: center;
+		border-top: 2px solid #ffd54f;
+		border-bottom: 2px solid #ffd54f;
+	}
+	ul.nav > li {
+		list-style:  none;
+		display: inline-block;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	ul.nav > li > a {
+		text-decoration: none;
+	}
+	li.nav-main {
+		z-index: 99;
+	}
+	li.nav-main > a:hover {
+		
+	}
+	li.nav-sub {
+		font-family: "", sans-serif;
+		font-style: bold;
+		font-size: 1.5em;
+		color: white;
+	}
+	li.nav-sub > a:hover {
+		color: #ffd54f;
+	}
+	li.nav-sub > a:active {
+		color: #ffd54f;
+	}
+
+</style>
+
+</head>
+<body>
+<nav class="nav-bar">
+	<ul class="nav center-horizontal">
+		<li class="nav-sub"><a href="#description">รายละเอียด</a></li>
+		<li class="nav-sub"><a href="#schedule">กำหนดการ</a></li>
+		<li class="nav-main"><a href="#register"><img src="#" alt="#" /></a></li>
+		<li class="nav-sub"><a href="#faq">คำถามที่พบบ่อย</a></li>
+		<li class="nav-sub"><a href="#contact">ติดต่อเรา</a></li>
+	</ul>
+</nav>
+</body>
+</html>
