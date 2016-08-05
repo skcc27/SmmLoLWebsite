@@ -147,13 +147,13 @@
                     </div>
                 </div>
 
-                <div class="checkbox">
+                <!--<div class="checkbox">
                     <div class="col-md-4 col-md-offset-4">
                         <label>
                             <input type="checkbox"> Check me out
                         </label>
                     </div>
-                </div>
+                </div>-->
 
             </fieldset>
         </form>

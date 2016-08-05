@@ -1,5 +1,6 @@
 function showCaution(ele) {
     console.log('caution');
+    console.log('Data: ' + ele);
 	var index = ["team", "player1", "player2", "player3", "player4", "player5", "player6", "rule"];
 	goToPage(index.indexOf($(ele).parents(".page").attr("role")), 500);
 	setTimeout(function() {
@@ -24,9 +25,9 @@ function check() {
 		}
 	}
 	var inputtel = $("input[role='telnum'][type!=checkbox]");
-	for (var i = 0; i < inputreq.length; i++) {
-		var value = inputreq.eq(i);
-		if ($(value).val().split("").length < 16) {
+    for (var i = 0; i < inputtel.length; i++) {
+        var value = inputtel.eq(i);
+        if ($(value).val().length < 16) {
 			showCaution(value);
 			pass = false;
 			break;
