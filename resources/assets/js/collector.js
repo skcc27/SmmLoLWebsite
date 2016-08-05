@@ -34,14 +34,21 @@ function check() {
 	}
 	return pass;
 }
-
+/*
 function send_data(data) {
 	var data_array = data.split("&"),
 	data_json = {};
 	for(var i = 0; i < data_array.length; i++) {
 		data_json[data_array[i].split("=")[0]] = data_array[i].split("=")[1];
 	}
-	console.log(data_json);
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: json-data,
+		success: function () {
+			alert("Success!");
+		}
+	});
 }
 
 $("#lolNextBtn").on("click", function () {
@@ -54,3 +61,4 @@ $("#lolNextBtn").on("click", function () {
 			send_data($("#registerForm").find("form").serialize());
 	}
 });
+*/
