@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
 @endsection
 
-@section('stylesheet')
-
+@section('headscript')
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
 @endsection
 
 @section('prescript')
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
 @endsection
 
 @section('script')
