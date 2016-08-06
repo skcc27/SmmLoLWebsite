@@ -60,7 +60,7 @@ class TeamController extends Controller
                 $data = ['status' => 'success', 'message' => 'Registration successes!'];
             } catch (\Exception $e) {
                 DB::rollback();
-                $data = ['status' => 'danger', 'message' => 'Internal error! Please contact the admin!'];
+                $data = ['status' => 'danger', 'message' => 'Error! Existing data found in our database! Please check your submission!'];
             }
         }
         if ($request->ajax())
