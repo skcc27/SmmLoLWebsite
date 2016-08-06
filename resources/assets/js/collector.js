@@ -27,6 +27,8 @@ function check() {
     return true;
 }
 
+
+var locked = false;
 function send_data(data) {
     /*var data_array = data.split("&"),
 	data_json = {};
@@ -54,9 +56,10 @@ function send_data(data) {
 
             });
             if (msg.status == 'success') {
+                locked = true;
                 ClosePopup('.lol-pop-up', 800);
                 $('.lol-checkbox').removeClass('check');
-                $(this).closest('form').find("input, textarea").val("");
+                $('.lol-form').find('input:text, input:password, input:file, select, textarea').val('');
                 goToPage(1, 0)
             }
             //alert('Submission result: ' + msg.message);
@@ -66,6 +69,7 @@ function send_data(data) {
 
 $("#lolNextBtn").on("click", function () {
     if ($("#lolNextBtn").attr('register') == 'false') return;
+    if (INDEX != 7 || locked) return;
     console.log('Clicked');
     if ($("#ruleAccContainer").find("div").hasClass('check')) {
         console.log('Trying to check');
