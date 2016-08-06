@@ -4,7 +4,7 @@
             <!-- Navigation bar will go here! -->
             <div class="row">
                 <div class="col-md-6 right">
-                    <h2 class="subtitle text-center">คำถามที่พบบ่อย</h2>
+                    <h2 class="subtitle text-center">สถานที่จัดการแข่งขัน</h2>
                     <!-- FAQ Content will go here need bus to support this! -->
                 </div>
             </div>
