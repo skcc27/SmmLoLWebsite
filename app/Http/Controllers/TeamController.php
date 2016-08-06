@@ -19,6 +19,10 @@ class TeamController extends Controller
         "summoner_name_6" => 'min:3|max:16'
     ];
 
+    private $successMessage = "การสมัครเสร็จสมบูรณ์การสมัครของคุณกำลังรอพิจราณา
+    เราจะส่งข้อมูลการแข่งขันและรายละเอียดต่างๆของทีมผ่านทางเฟสบุ๊คโดยเร็วที่สุด";
+    private $dbFailMessage = "พบข้อมูลที่คุณกรอกมาอยู่ในฐานข้อมูลของเราแล้ว กรุณาตรวจสอบให้แน่ใจว่ากรอกข้อมูลได้ถูกต้องแล้ว";
+    private $invalidFailMessage = "ข้อมูลที่คุณกรอกไม่ถูกต้อง กรุณาตรวจสอบอีกครั้ง";
     public function register(Request $request)
     {
         /** @var \Illuminate\Validation\Validator $validator */
@@ -31,7 +35,7 @@ class TeamController extends Controller
         $validator = Validator::make($request->all(), $arr);
         $data = [];
         if ($validator->fails()) {
-            $data = ['status' => 'danger', 'message' => 'Error! Invalid data!'];
+            $data = ['status' => 'danger', 'message' => $this->invalidFailMessage];
         } else {
             DB::beginTransaction();
             try {
@@ -57,16 +61,10 @@ class TeamController extends Controller
                     $c->save();
                 }
                 DB::commit();
-                $data = ['status' => 'success',
-                    'message' => 'Registration successful! 
-                    Your submission is being verified by our staff. 
-                    We will send a facebook message to your team leader about your submission result as soon as possible.'];
+                $data = ['status' => 'success', 'message' => $this->successMessage];
             } catch (\Exception $e) {
                 DB::rollback();
-                $data = ['status' => 'danger',
-                    'message' => 'Error! Existing data found in our database! 
-                    Please check your submission!'
-                ];
+                $data = ['status' => 'danger', 'message' => $this->dbFailMessage];
             }
         }
         if ($request->ajax())
