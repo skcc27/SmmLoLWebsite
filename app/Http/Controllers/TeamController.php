@@ -25,7 +25,7 @@ class TeamController extends Controller
         $arr = [
             'name' => 'required|min:3|max:72',
             'tag' => 'required|min:3|max:6',
-            'password' => 'required|min:4|max:24'
+            //'password' => 'required|min:4|max:24'
         ];
         $arr = $arr + $this->memberValidationRules();
         $validator = Validator::make($request->all(), $arr);

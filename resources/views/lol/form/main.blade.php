@@ -18,13 +18,14 @@
                     <label>
                         Team Name
                     </label>
-                    <input type="text" required autocomplete="off" role="teamname"/>
+                    <input type="text" required autocomplete="off" role="teamname" name="name"/>
                 </div>
                 <div class="field-wrap">
                     <label>
                         Simple Team Name
                     </label>
-                    <input type="text" required autocomplete="off" role="steamname" style="text-transform: uppercase;"/>
+                    <input type="text" required autocomplete="off" role="steamname" name="tag"
+                           style="text-transform: uppercase;"/>
                 </div>
             </div>
             <div class="page" role="player1">
