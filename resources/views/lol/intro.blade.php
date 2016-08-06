@@ -33,7 +33,11 @@
                         <a href="#description">
                             <!-- Need to make it smooth scroll down when clicked. -->
                             <button id="moreInfo"
-                                    class="lol-button more-info mdl-button mdl-js-button mdl-js-ripple-effect">More Info
+                                    class="lol-button more-info mdl-button mdl-js-button mdl-js-ripple-effect"
+                                    data-upgraded=",MaterialButton,MaterialRipple" disabled=""
+                                    style="border: 0;color: #FFFFFF;font-size:70%;">Scroll down for mor information<span
+                                        class="mdl-button__ripple-container"><span class="mdl-ripple is-animating"
+                                                                                   style="width: 486.801px; height: 486.801px; transform: translate(-50%, -50%) translate(214px, 22px);"></span></span>
                             </button>
                         </a>
                     </div>

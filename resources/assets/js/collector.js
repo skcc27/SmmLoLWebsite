@@ -38,7 +38,21 @@ function send_data(data) {
         url: '/team/register',
         data: data,
         success: function (msg) {
-            alert('Submission result: ' + msg.message);
+            $.notify({
+                // optionsicon: '
+                glyphicon: 'glyphicon glyphicon-warning-sign',
+                title: '<bold>Submission status</bold>',
+                message: msg.message
+            }, {
+                // settings
+                type: msg.status,
+                allow_dismiss: true,
+                placement: {
+                    from: "bottom",
+                    align: "right"
+                }
+            });
+            //alert('Submission result: ' + msg.message);
 		}
 	});
 }
