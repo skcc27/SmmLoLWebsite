@@ -4,8 +4,15 @@
             <!-- Navigation bar will go here! -->
             <div class="row">
                 <div class="col-md-6 right">
-                    <h2 class="subtitle text-center">คำถามที่พบบ่อย</h2>
-                    <!-- FAQ Content will go here need bus to support this! -->
+                    <h2 class="subtitle text-center">สถานที่จัดการแข่งขัน</h2>
+                        <h3 class="supersubtitle">รอบคัดเลือก</h3>
+                        <p class="description2">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates eos quas deleniti similique, magni omnis a impedit itaque sed tempora aliquid quos laborum error, fuga quis velit aspernatur dicta!
+                        </p>
+                        <h3 class="supersubtitle">รอบชิงชนะเลิศ</h3>
+                        <p class="description2">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptates eos quas deleniti similique, magni omnis a impedit itaque sed tempora aliquid quos laborum error, fuga quis velit aspernatur dicta!
+                        </p>
                 </div>
             </div>
             <div class="row">

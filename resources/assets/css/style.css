@@ -275,4 +275,19 @@ text {
   height: 120px;
   margin: 20px;
 }
+p.description2 {
+    margin: 10px 10px 20px 30px;
+    color: white;
+    font-family: 'Prompt', serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    line-height: 1.2;
+}
+h3.supersubtitle {
+  color: white;
+  margin: 20px;
+  font-family: 'Prompt', serif;
+  font-weight: bold;
+  font-size: 2em;
+}
 
