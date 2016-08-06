@@ -52,6 +52,10 @@ function send_data(data) {
                     align: "right"
                 }
             });
+            if (msg.status == 'success') {
+                ClosePopup('.lol-pop-up', 800);
+                $('.lol-form').reset();
+            }
             //alert('Submission result: ' + msg.message);
 		}
 	});

@@ -98,6 +98,6 @@ $("#lolNextBtn").on("click", function () {
 });
 
 $("#lolBackBtn").on("click", function () {
-	if ($("#lolNextBtn").attr('register') == "true") return;
+	//if ($("#lolNextBtn").attr('register') == "true") return;
 	goToPage(INDEX - 1, 1000);
 });
