@@ -41,7 +41,7 @@ function send_data(data) {
             $.notify({
                 // optionsicon: '
                 glyphicon: 'glyphicon glyphicon-warning-sign',
-                title: '<bold>Submission status</bold>',
+                title: '<strong>Submission status: </strong>',
                 message: msg.message
             }, {
                 // settings
@@ -51,10 +51,13 @@ function send_data(data) {
                     from: "bottom",
                     align: "right"
                 }
+
             });
             if (msg.status == 'success') {
                 ClosePopup('.lol-pop-up', 800);
-                $('.lol-form').reset();
+                $('.lol-checkbox').removeClass('check');
+                $(this).closest('form').find("input, textarea").val("");
+                goToPage(1, 0)
             }
             //alert('Submission result: ' + msg.message);
 		}

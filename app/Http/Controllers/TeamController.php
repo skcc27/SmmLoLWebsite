@@ -31,7 +31,7 @@ class TeamController extends Controller
         $validator = Validator::make($request->all(), $arr);
         $data = [];
         if ($validator->fails()) {
-            $data = ['status' => 'danger', 'message' => 'Invalid data!'];
+            $data = ['status' => 'danger', 'message' => 'Error! Invalid data!'];
         } else {
             DB::beginTransaction();
             try {
@@ -57,10 +57,16 @@ class TeamController extends Controller
                     $c->save();
                 }
                 DB::commit();
-                $data = ['status' => 'success', 'message' => 'Registration successes!'];
+                $data = ['status' => 'success',
+                    'message' => 'Registration successful! 
+                    Your submission is being verified by our staff. 
+                    We will send a facebook message to your team leader about your submission result as soon as possible.'];
             } catch (\Exception $e) {
                 DB::rollback();
-                $data = ['status' => 'danger', 'message' => 'Error! Existing data found in our database! Please check your submission!'];
+                $data = ['status' => 'danger',
+                    'message' => 'Error! Existing data found in our database! 
+                    Please check your submission!'
+                ];
             }
         }
         if ($request->ajax())
