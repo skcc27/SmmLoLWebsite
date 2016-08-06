@@ -27,7 +27,7 @@ class TeamController extends Controller
             'tag' => 'required|min:3|max:6',
             'password' => 'required|min:4|max:24'
         ];
-        $arr = $arr + $this->memberValidationRules() + $this->optionalNames;
+        $arr = $arr + $this->memberValidationRules();
         $validator = Validator::make($request->all(), $arr);
         $data = [];
         if ($validator->fails()) {
