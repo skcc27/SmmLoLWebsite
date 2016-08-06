@@ -1,6 +1,7 @@
 <div id="registerForm" class="lol-pop-up">
     <overlay></overlay>
     <div class="lol-pop-up-content" style="width: 60%; height: 60%;">
+        <div id="requiredCaution" class="lol-caution">Please complete this filled.</div>
         <close></close>
         <button id="lolBackBtn">Back</button>
         <button id="lolNextBtn">Next</button>
@@ -299,4 +300,3 @@
         </form>
     </div>
 </div>
-<div id="requiredCaution" class="lol-caution">Please complete this filled.</div>

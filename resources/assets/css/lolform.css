@@ -420,13 +420,19 @@ div.lol-checkbox {
     cursor: pointer;
 }
 
-div.lol-checkbox.check:before {
+div.lol-checkbox:before {
     content: '';
     position: absolute;
-    left: 0.5em;
     top: 0;
     height: 100%;
+    opacity: 0;
     border: 1px solid #000000;
+    transition: all 0.3s;
+}
+
+div.lol-checkbox.check:before {
+    left: 0.5em;
+    opacity: 1;
     transform: rotateZ(45deg);
 }
 
@@ -439,7 +445,7 @@ div.lol-checkbox.check:before {
 }
 
 .lol-caution {
-    position: fixed;
+    position: absolute;
     z-index: 10000;
     color: #FF0000;
     font-size: 1em;
