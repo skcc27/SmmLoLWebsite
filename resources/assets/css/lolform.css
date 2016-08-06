@@ -445,7 +445,7 @@ div.lol-checkbox.check:before {
 }
 
 .lol-caution {
-    position: absolute;
+    position: fixed;
     z-index: 10000;
     color: #FF0000;
     font-size: 1em;
@@ -455,6 +455,9 @@ div.lol-checkbox.check:before {
     border-radius: 0.2em;
     line-height: 1em;
     margin-top: -3.25em;
+    top: 27%;
+    left: 23%;
+    display: none;
 }
 
 .lol-caution:before {

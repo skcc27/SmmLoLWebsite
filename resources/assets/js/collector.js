@@ -1,19 +1,9 @@
 function showCaution(ele) {
     console.log('caution');
-    console.log(ele);
 	var index = ["team", "player1", "player2", "player3", "player4", "player5", "player6", "rule"];
 	goToPage(index.indexOf($(ele).parents(".page").attr("role")), 500);
-	setTimeout(function() {
-		var x = $(ele).offset().left,
-            y = $(ele).offset().top,
-            x1 = $("#registerForm").find("lol-pop-up-content").offset().left,
-            y1 = $("#registerForm").find("lol-pop-up-content").offset().top;
-        console.log(x);
-        console.log(y);
-		$("#requiredCaution").css({
-			"top": y,
-			"left": x
-		}).fadeIn(500);
+    setTimeout(function () {
+        $("#requiredCaution").fadeIn(500)
     }, 1000);
 }
 
@@ -26,7 +16,7 @@ function check() {
             return false;
 		}
 	}
-    var inputtel = $("input[role='telnum']");
+    var inputtel = $("input[role='telnum'][required]");
     for (var i = 0; i < inputtel.length; i++) {
         var value = inputtel.eq(i);
         if ($(value).val().length < 16) {
