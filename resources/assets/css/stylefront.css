@@ -19,7 +19,8 @@
     color: white;
     font-family: 'Prompt', serif;
     font-weight: 300;
-    font-size: 1.5em;
+    /*font-size: 1.5em;*/
+    font-size: 1.4vmax;
     line-height: 1.4;
 }
 .description {
@@ -27,11 +28,16 @@
     color: white;
     font-family: 'Prompt', serif;
     font-weight: 300;
-    font-size: 1.5em;
+    /*font-size: 1.5em;*/
+    font-size: 1.4vmax;
     line-height: 1.4;
 }
 .lol {
     color: #ffd54f;
+}
+
+.lol-title {
+    font-size: 3vmax;
 }
 .subtitle {
     color: white;
