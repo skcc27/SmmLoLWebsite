@@ -20,12 +20,12 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <style>
         .lol-form-page {
-            background: url('/img/background2.jpg') fixed;
-            color: #dddddd;
+            /*background: url('/img/background2.jpg') fixed;*/
+            color: #666666;
         }
 
         .lol-legend {
-            color: #dddddd;
+            color: #666666;
         }
     </style>
 </head>

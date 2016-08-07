@@ -25,8 +25,8 @@
 
 @section('content')
     @include('lol.intro')
-    @include('lol.info')
+    {{--@include('lol.info')
     @include('lol.schedule')
     @include('lol.faq')
-    @include('lol.fb')
+    @include('lol.fb')--}}
 @endsection

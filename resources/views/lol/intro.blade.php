@@ -24,7 +24,7 @@
                     <div class="col-md-6 center">
                         <!-- Need to link with register ajax. -->
                         <button id="registerBtn"
-                                go="registerForm"
+                                onclick="window.location = '/team/register'"
                                 class="lol-button register mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
                             Register
                         </button>
@@ -32,10 +32,10 @@
                     <div class="col-md-6 center">
                         <a href="#description">
                             <!-- Need to make it smooth scroll down when clicked. -->
-                            <button id="moreInfo"
-                                    onclick='parallaxScroll(null);'
-                                    class="lol-button more-info mdl-button mdl-js-button mdl-js-ripple-effect">More Info
-                            </button>
+                            <!-- <button id="moreInfo"
+                                     onclick='parallaxScroll(null);'
+                                     class="lol-button more-info mdl-button mdl-js-button mdl-js-ripple-effect">More Info
+                             </button>-->
                         </a>
                     </div>
                 </div>
