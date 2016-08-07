@@ -7,9 +7,16 @@ var slideDurationSetting = 600; //Amount of time for which slide is "locked"
 var currentSlideNumber = 0;
 var totalSlideNumber = $(".background").length;
 
+function isMobile() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true;
+    }
+    return false;
+}
+
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
 function parallaxScroll(evt, modifier) {
-    modifier = modifier || -1;
+    modifier = modifier || 1;
     var delta = 0;
     if (evt == null) {
         delta = -120;
@@ -24,6 +31,7 @@ function parallaxScroll(evt, modifier) {
         delta = evt.wheelDelta;
     }
     delta *= modifier;
+    if (isMobile()) delta *= -1;
     if (ticking != true) {
         if (delta <= -scrollSensitivitySetting) {
             //Down scroll
