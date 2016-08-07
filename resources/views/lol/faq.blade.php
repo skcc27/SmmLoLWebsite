@@ -7,7 +7,7 @@
                     <h2 class="subtitle text-center">สถานที่จัดการแข่งขัน</h2>
                         <h3 class="supersubtitle">รอบคัดเลือก และ Semi-Final</h3>
                         <p class="description2">
-                            แข่งขันออนไลน์ เพื่อหาผู้เข้าแข่งขันในรอบ และ Final
+                            แข่งขันออนไลน์ เพื่อหาผู้เข้าแข่งขันในรอบรองชนะเลิศอันดับที่ 2 และ Final
                         </p>
                         <h3 class="supersubtitle">รอบ Final</h3>
                         <p class="description2">
