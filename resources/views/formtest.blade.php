@@ -18,8 +18,18 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <style>
+        .lol-form-page {
+            background: url('/img/background2.jpg') fixed;
+            color: #dddddd;
+        }
+
+        .lol-legend {
+            color: #dddddd;
+        }
+    </style>
 </head>
-<body>
+<body class="lol-form-page">
 <div class="container">
     <h1>Registration form</h1>
     <hr>
@@ -37,7 +47,7 @@
             <fieldset>
 
                 <!-- Form Name -->
-                <legend>Basic informations</legend>
+                <legend class="lol-legend">Basic informations</legend>
 
                 <!-- Text input-->
                 <div class="form-group">
@@ -59,18 +69,18 @@
                 </div>
 
                 <!-- Password input-->
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label class="col-md-4 control-label" for="password">Team Password</label>
                     <div class="col-md-4">
                         <input id="password" name="password" type="password" placeholder="Password"
                                class="form-control input-md">
                         <span class="help-block">Enter your team password</span>
                     </div>
-                </div>
+                </div>-->
 
             @for($i=1;$i<=6;$i++)
                 <!-- Form Name -->
-                    <legend>Team member # {{$i}} @if($i == 6) (Optional) @endif</legend>
+                    <legend class="lol-legend">Team member # {{$i}} @if($i == 6) (Optional) @endif</legend>
 
                     <!-- Text input-->
                     <div class="form-group">
@@ -135,11 +145,11 @@
             @endfor
 
             <!-- Captcha and i agree -->
-                <div class="form-group">
+                <!--<div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
                         <div class="g-recaptcha" data-sitekey="6Ld0eyYTAAAAAGzBPUjG0pjbUZDQT4CQ6tPXsIRI"></div>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-4">
