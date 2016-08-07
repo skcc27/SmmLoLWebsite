@@ -8,7 +8,8 @@ var currentSlideNumber = 0;
 var totalSlideNumber = $(".background").length;
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
-function parallaxScroll(evt) {
+function parallaxScroll(evt, modifier) {
+    modifier = modifier || -1;
     var delta = 0;
     if (evt == null) {
         delta = -120;
@@ -22,7 +23,7 @@ function parallaxScroll(evt) {
         //Set delta for all other browsers
         delta = evt.wheelDelta;
     }
-
+    delta *= modifier;
     if (ticking != true) {
         if (delta <= -scrollSensitivitySetting) {
             //Down scroll
@@ -66,3 +67,46 @@ function previousItem() {
     var $currentSlide = $(".background").eq(currentSlideNumber);
     $currentSlide.removeClass("down-scroll").addClass("up-scroll");
 }
+
+// Mobile swipe
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;
+var yDown = null;
+
+var threshold = 5;
+
+function handleTouchStart(evt) {
+    xDown = evt.touches[0].clientX;
+    yDown = evt.touches[0].clientY;
+}
+
+function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
+        if (xDiff > threshold) {
+            /* left swipe */
+        } else {
+            /* right swipe */
+        }
+    } else {
+        if (yDiff > threshold) {
+            parallaxScroll(null, 1);
+        } else {
+            parallaxScroll(null, -1);
+        }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+};
