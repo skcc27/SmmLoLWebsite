@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Captain;
 use App\Contestant;
 use App\Team;
 use Illuminate\Http\Request;
@@ -45,6 +46,7 @@ class TeamController extends Controller
                 $team->tag = $request->input('tag');
                 $team->password = Hash::make($request->input('password'));
                 $team->save();
+                $leaderId = 0;
                 // Create all contestants
                 for ($i = 1; $i <= 6; $i++) {
                     if ($i == 6)
@@ -59,7 +61,14 @@ class TeamController extends Controller
                     $c->facebook = $request->input('facebook_' . $i);
                     $c->team_id = $team->id;
                     $c->save();
+                    if ($i == 1)
+                        $leaderId = $c->id;
                 }
+                // Team captain
+                $captain = new Captain();
+                $captain->team_id = $team->id;
+                $captain->contestant_id = $leaderId;
+                $captain->save();
                 DB::commit();
                 $data = ['status' => 'success', 'message' => $this->successMessage];
             } catch (\Exception $e) {

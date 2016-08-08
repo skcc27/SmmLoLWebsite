@@ -28,6 +28,7 @@
             color: #666666;
         }
     </style>
+    @include('ga')
 </head>
 <body class="lol-form-page">
 <div class="container">
