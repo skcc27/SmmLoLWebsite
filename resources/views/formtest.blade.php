@@ -65,7 +65,7 @@
                     <label class="col-md-4 control-label" for="tag">Tag</label>
                     <div class="col-md-4">
                         <input id="tag" name="tag" type="text" placeholder="Tag" style="text-transform:uppercase"
-                               class="form-control input-md" maxlenght="5" required>
+                               class="form-control input-md" maxlength="5" required>
                         <span class="help-block">Enter your short team name</span>
                     </div>
                 </div>
