@@ -42,10 +42,10 @@
             </div>
             <div class="row">
                 <div class="sponsor left">Sponsored by
-                    <img src="/img/sponsor1.png" alt="Garena">
-                    <img src="/img/sponsor2.png" alt="Suabkularb Wittayalai School">
-                    <img src="/img/sponsor3.png" alt="SK Com Club">
-                    <img src="/img/sponsor4.png" alt="Samarnmitr">
+                    <img class="img-responsive" src="/img/sponsor1.png" alt="Garena">
+                    <img class="img-responsive" src="/img/sponsor2.png" alt="Suabkularb Wittayalai School">
+                    <img class="img-responsive" src="/img/sponsor3.png" alt="SK Com Club">
+                    <img class="img-responsive" src="/img/sponsor4.png" alt="Samarnmitr">
                 </div>
             </div>
         </div>
