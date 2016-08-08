@@ -65,7 +65,7 @@
                     <label class="col-md-4 control-label" for="tag">Tag</label>
                     <div class="col-md-4">
                         <input id="tag" name="tag" type="text" placeholder="Tag" style="text-transform:uppercase"
-                               class="form-control input-md" required>
+                               class="form-control input-md" maxlength="5" required>
                         <span class="help-block">Enter your short team name</span>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="batch">SK</label>
                         <div class="col-md-4">
-                            <input id="batch" name="batch_{{$i}}" type="text" placeholder="Batch"
+                            <input id="batch" name="batch_{{$i}}" type="number" placeholder="Batch"
                                    class="form-control input-md"
                                    @if($i != 6) required @endif>
 
@@ -140,7 +140,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="phone">Phone</label>
                         <div class="col-md-4">
-                            <input id="phone" name="phone_{{$i}}" type="text" placeholder="Mobile phone number"
+                            <input id="phone" name="phone_{{$i}}" type="tel" placeholder="Mobile phone number"
                                    class="form-control input-md" @if($i != 6) required @endif>
 
                         </div>
