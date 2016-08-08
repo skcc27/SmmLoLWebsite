@@ -30,4 +30,6 @@
 body {
     background: url("/img/background1.jpg") fixed;
     background-position: 70% 0%;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
