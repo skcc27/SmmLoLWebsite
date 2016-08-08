@@ -55,7 +55,7 @@
                     <label class="col-md-4 control-label" for="name">Team name</label>
                     <div class="col-md-4">
                         <input id="name" name="name" type="text" placeholder="Enter your team name here"
-                               class="form-control input-md" required="">
+                               class="form-control input-md" required>
                         <span class="help-block">Full name of your team</span>
                     </div>
                 </div>
@@ -64,8 +64,19 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="tag">Tag</label>
                     <div class="col-md-4">
-                        <input id="tag" name="tag" type="text" placeholder="Tag" class="form-control input-md">
+                        <input id="tag" name="tag" type="text" placeholder="Tag" style="text-transform:uppercase"
+                               class="form-control input-md" required>
                         <span class="help-block">Enter your short team name</span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">Email</label>
+                    <div class="col-md-4">
+                        <input id="email" name="email" type="email" placeholder="Email" class="form-control input-md"
+                               required>
+                        <span class="help-block">Enter your team email (we will send your submission result)</span>
                     </div>
                 </div>
 

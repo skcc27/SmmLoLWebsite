@@ -45,6 +45,8 @@ class TeamController extends Controller
                 $team->name = $request->input('name');
                 $team->tag = $request->input('tag');
                 $team->password = Hash::make($request->input('password'));
+                $team->email = $request->input('email');
+                
                 $team->save();
                 $leaderId = 0;
                 // Create all contestants
