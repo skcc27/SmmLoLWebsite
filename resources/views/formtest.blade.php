@@ -92,7 +92,8 @@
 
             @for($i=1;$i<=6;$i++)
                 <!-- Form Name -->
-                    <legend class="lol-legend">Team member # {{$i}} @if($i == 6) (Optional) @endif</legend>
+                    <legend class="lol-legend">Team member # {{$i}} @if($i == 6) (Optional) @elseif($i == 1)
+                            (Captain) @endif</legend>
 
                     <!-- Text input-->
                     <div class="form-group">
