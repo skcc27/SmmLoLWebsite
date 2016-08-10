@@ -78,6 +78,8 @@ class TeamController extends Controller
                 $data = ['status' => 'success', 'message' => $this->successMessage];
             } catch (\Exception $e) {
                 DB::rollback();
+                Log::error("Exception while inserting entry into the DB", ['message' => $e->getMessage(), 'stacktrace' => $e->getTraceAsString(),
+                    'line' => $e->getLine()]);
                 $data = ['status' => 'danger', 'message' => $this->dbFailMessage];
             }
         }
