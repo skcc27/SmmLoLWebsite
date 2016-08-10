@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Captain extends Model
 {
     protected $table = "teams_captains";
-    protected $timestamps = false;
+    public $timestamps = false;
 
     public function contestant()
     {
