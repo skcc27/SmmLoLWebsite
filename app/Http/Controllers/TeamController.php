@@ -27,6 +27,8 @@ class TeamController extends Controller
     กรุณาตรวจสอบให้แน่ใจว่ากรอกข้อมูลได้ถูกต้องแล้ว
     ถ้าหากคุณคิดว่าข้อมูลนั้นถูกต้องแล้ว โปรดติดต่อผู้ดูแลระบบ";
     private $invalidFailMessage = "ข้อมูลที่คุณกรอกไม่ถูกต้อง กรุณาตรวจสอบอีกครั้ง";
+    private $teamExistsMessage = "ชื่อทีมมีคนใช้ไปแล้ว";
+    private $nameExistsMessage = "มีข้อมูลผู้เข้าแข่งขันคนนี้ในฐานข้อมูลแล้ว";
     public function register(Request $request)
     {
         /** @var \Illuminate\Validation\Validator $validator */
@@ -44,38 +46,42 @@ class TeamController extends Controller
             DB::beginTransaction();
             try {
                 // Create team
-                $team = new Team;
-                $team->name = $request->input('name');
-                $team->tag = $request->input('tag');
-                $team->password = Hash::make($request->input('password'));
-                $team->email = $request->input('email');
-                
-                $team->save();
-                $leaderId = 0;
-                // Create all contestants
-                for ($i = 1; $i <= 6; $i++) {
-                    if ($i == 6)
-                        if ($request->input('first_name') == '')
-                            continue;
-                    $c = new Contestant;
-                    $c->first_name = $request->input('first_name_' . $i);
-                    $c->last_name = $request->input('last_name_' . $i);
-                    $c->batch = $request->input('batch_' . $i);
-                    $c->summoner_name = $request->input('summoner_name_' . $i);
-                    $c->phone = $request->input('phone_' . $i);
-                    $c->facebook = $request->input('facebook_' . $i);
-                    $c->team_id = $team->id;
-                    $c->save();
-                    if ($i == 1)
-                        $leaderId = $c->id;
+                if (Team::where('name', '=', $request->input('name'))->exists()) {
+                    $data = ['status' => 'danger', 'message' => $this->teamExistsMessage];
+                } else {
+                    $team = new Team;
+                    $team->name = $request->input('name');
+                    $team->tag = $request->input('tag');
+                    $team->password = Hash::make($request->input('password'));
+                    $team->email = $request->input('email');
+
+                    $team->save();
+                    $leaderId = 0;
+                    // Create all contestants
+                    for ($i = 1; $i <= 6; $i++) {
+                        if ($i == 6)
+                            if ($request->input('first_name') == '')
+                                continue;
+                        $c = new Contestant;
+                        $c->first_name = $request->input('first_name_' . $i);
+                        $c->last_name = $request->input('last_name_' . $i);
+                        $c->batch = $request->input('batch_' . $i);
+                        $c->summoner_name = $request->input('summoner_name_' . $i);
+                        $c->phone = $request->input('phone_' . $i);
+                        $c->facebook = $request->input('facebook_' . $i);
+                        $c->team_id = $team->id;
+                        $c->save();
+                        if ($i == 1)
+                            $leaderId = $c->id;
+                    }
+                    // Team captain
+                    $captain = new Captain();
+                    $captain->team_id = $team->id;
+                    $captain->contestant_id = $leaderId;
+                    $captain->save();
+                    DB::commit();
+                    $data = ['status' => 'success', 'message' => $this->successMessage];
                 }
-                // Team captain
-                $captain = new Captain();
-                $captain->team_id = $team->id;
-                $captain->contestant_id = $leaderId;
-                $captain->save();
-                DB::commit();
-                $data = ['status' => 'success', 'message' => $this->successMessage];
             } catch (\Exception $e) {
                 DB::rollback();
                 Log::error("Exception while inserting entry into the DB", ['message' => $e->getMessage(), 'stacktrace' => $e->getTraceAsString(),
