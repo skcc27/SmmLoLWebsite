@@ -20,8 +20,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="btn-container col-md-6">
-                    <div class="col-md-6 center">
+                <div class="btn-container col-md-6 col-xs-12 col-sm-12">
+                    <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2 center">
                         <!-- Need to link with register ajax. -->
                         <button id="registerBtn"
                                 onclick="window.location = '/team/register'"
@@ -29,14 +29,12 @@
                             Register
                         </button>
                     </div>
-                    <div class="col-md-6 center">
-                        <a href="#description">
+                    <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2 center">
                             <!-- Need to make it smooth scroll down when clicked. -->
-                            <!-- <button id="moreInfo"
-                                     onclick='parallaxScroll(null);'
-                                     class="lol-button more-info mdl-button mdl-js-button mdl-js-ripple-effect">More Info
-                             </button>-->
-                        </a>
+                        <button id="moreInfo"
+                                onclick="window.location = '/info'"
+                                class="lol-button more-info mdl-button mdl-js-button mdl-js-ripple-effect">Info
+                        </button>
                     </div>
                 </div>
             </div>
@@ -44,28 +42,7 @@
                 <div class="sponsor left">Sponsored by
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-1 col-sm-10 col-xs-12">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <img class="img-responsive" src="/img/sponsor1.png" alt="Garena">
-
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <img class="img-responsive" src="/img/sponsor2.png" alt="Suabkularb Wittayalai School">
-
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <img class="img-responsive" src="/img/sponsor3.png" alt="SK Com Club">
-
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <img class="img-responsive" src="/img/sponsor4.png" alt="Samarnmitr">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include('lol.sponsor')
         </div>
     </div>
 </section>

@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('lol.index');
 });
 
+Route::get('/info-beta', function () {
+    return view('lol.info');
+});
+
 // Team registration page
 Route::post('/team/register', 'TeamController@register');
 Route::get('/team/register', 'TeamController@formPage');

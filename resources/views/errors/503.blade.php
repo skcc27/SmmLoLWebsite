@@ -40,7 +40,9 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title">We are currently performing updates to the system, please check back again in a few
+                    minutes.
+                </div>
             </div>
         </div>
     </body>

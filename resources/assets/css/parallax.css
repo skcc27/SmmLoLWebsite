@@ -27,9 +27,17 @@
     background-color: rgba(0, 0, 0, 0.3);*/
 }
 
-body {
+body.lol-intro {
     background: url("/img/background1.jpg") fixed;
     background-position: 70% 0%;
     -webkit-background-size: cover;
     background-size: cover;
+}
+
+body.lol-info {
+    background: url("/img/background2.jpg") fixed;
+    background-position: 70% 0%;
+    -webkit-background-size: cover;
+    background-size: cover;
+
 }

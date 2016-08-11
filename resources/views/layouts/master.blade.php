@@ -23,7 +23,7 @@
     @yield('head')
 
 </head>
-<body>
+<body class="@yield('body.class')">
 @section('content')
     <div class="container">
         <div class="content">

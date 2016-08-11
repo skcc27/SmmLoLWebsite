@@ -2,6 +2,8 @@
 
 @section('title', 'SKLOL')
 
+@section('body.class','lol-intro')
+
 @section('prestylesheet')
 
     <link href='https://fonts.googleapis.com/css?family=Prompt:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic|Maitree:400,200,300,500,600,700&subset=thai,latin'
@@ -25,8 +27,4 @@
 
 @section('content')
     @include('lol.intro')
-    {{--@include('lol.info')
-    @include('lol.schedule')
-    @include('lol.faq')
-    @include('lol.fb')--}}
 @endsection
