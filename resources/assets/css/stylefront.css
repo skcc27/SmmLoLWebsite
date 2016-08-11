@@ -111,6 +111,10 @@
     color: white;
 }
 
+.lol-table-main {
+    margin-left: 8%;
+}
+
 .lol-table-data {
     background: #fafafa;
     color: #333333;
