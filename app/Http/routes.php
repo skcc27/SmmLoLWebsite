@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('lol.index');
 });
 
-Route::get('/info-beta', function () {
+Route::get('/info', function () {
     return view('lol.info');
 });
 
