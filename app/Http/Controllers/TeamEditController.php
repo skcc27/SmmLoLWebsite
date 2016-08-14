@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
+
 use app\RandomToken;
 use App\Team;
 use App\TeamToken;
