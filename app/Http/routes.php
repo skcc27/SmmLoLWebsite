@@ -22,3 +22,6 @@ Route::get('/info', function () {
 // Team registration page
 Route::post('/team/register', 'TeamController@register');
 Route::get('/team/register', 'TeamController@formPage');
+
+// Test
+Route::any('/team/token', 'TeamEditController@generateToken');
