@@ -1,3 +1,3 @@
-Dear team captain
+Dear {{$team->captain()->name}}
 
-Your submission has been approved!
+This is your token: {{$token}}
