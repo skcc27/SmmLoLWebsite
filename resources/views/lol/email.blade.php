@@ -1,3 +1,3 @@
-Dear {{$team->captain()->name}}
+Dear {{$team->name}} team,
 
 This is your token: {{$token}}

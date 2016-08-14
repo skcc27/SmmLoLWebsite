@@ -34,7 +34,7 @@ class TeamEditController extends Controller
         Mail::send('lol.email', ['team' => $team, 'token' => $tokenString], function ($m) use ($team) {
             $m->from('noreply@smmlol.tk', 'Samarnmitr League of legends Competition');
 
-            $m->to($team->email, $team->captain()->name)->subject('Edit request token');
+            $m->to($team->email, $team->name)->subject('Edit request token');
         });
     }
 }
