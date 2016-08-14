@@ -23,7 +23,7 @@ class TeamEditController extends Controller
             $token->token = $tokenString;
             $token->save();
             $this->sendEmail($team, $tokenString);
-            return response();
+            return 'Success';
         } catch (\Exception $e) {
             return 'Exception : ' . $e->getMessage();
         }
