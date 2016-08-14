@@ -21,6 +21,8 @@ class TeamEditController extends Controller
             $token = TeamToken::where('team_id', $team->id);
             if (!$token->exists())
                 $token = new TeamToken();
+            else
+                $token = $token->first();
             $token->team_id = $team->id;
             $token->token = $tokenString;
             $token->save();
