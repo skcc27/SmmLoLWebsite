@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use app\RandomToken;
+use App\RandomToken;
 use App\Team;
 use App\TeamToken;
 
