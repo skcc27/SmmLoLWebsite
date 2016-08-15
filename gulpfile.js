@@ -13,7 +13,7 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss')
-        .styles(['stylefront.css', 'parallax.css', 'lolform.css'])
+        .styles(['stylefront.css', 'parallax.css'/*, 'lolform.css'*/])
         .browserify('app.js')
         .scripts(['bootstrap-notify.js', 'sc.js', 'script.js', 'collector.js']);
     mix.sass('admin.scss');

@@ -34,7 +34,7 @@ class TeamEditController extends Controller
     }
 
     private function sendEmail(Team $team, $tokenString)
-    {
+    {   
         Mail::send('lol.email', ['team' => $team, 'token' => $tokenString], function ($m) use ($team) {
             $m->from('noreply@smmlol.tk', 'Samarnmitr League of legends Competition');
 

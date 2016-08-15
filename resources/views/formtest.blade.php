@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title and other metadata -->
-    <title>Registration form</title>p
+    <title>Registration form</title>
 
     <!-- CSS -->
     <!-- TODO: Merge google font into sass -->

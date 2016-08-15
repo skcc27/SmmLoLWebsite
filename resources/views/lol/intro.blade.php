@@ -1,5 +1,4 @@
-<section class="background" id="intro">
-    @include('lol.form.main')
+<section>
     <div class="content-wrapper">
         <div class="container-fluid">
             <div class="row">

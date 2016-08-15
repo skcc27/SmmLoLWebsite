@@ -95,6 +95,11 @@ class TeamController extends Controller
             return redirect('/team/register')->with($data);
     }
 
+    public function edit()
+    {
+
+    }
+
     public function formPage()
     {
         return view('formtest');
