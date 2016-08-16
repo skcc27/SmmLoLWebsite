@@ -54,7 +54,7 @@
                     <label>
                         Telephone Number
                     </label>
-                    <input type="text" required autocomplete="off" role="telnum"/>
+                    <input type="number" required autocomplete="off" role="telnum"/>
                 </div>
                 <div class="field two">
                     <div class="field-wrap">
@@ -97,7 +97,7 @@
                     <label>
                         Telephone Number
                     </label>
-                    <input type="text" required autocomplete="off" role="telnum"/>
+                    <input type="number" required autocomplete="off" role="telnum"/>
                 </div>
                 <div class="field two">
                     <div class="field-wrap">
@@ -140,7 +140,7 @@
                     <label>
                         Telephone Number
                     </label>
-                    <input type="text" required autocomplete="off" role="telnum"/>
+                    <input type="number" required autocomplete="off" role="telnum"/>
                 </div>
                 <div class="field two">
                     <div class="field-wrap">
@@ -183,7 +183,7 @@
                     <label>
                         Telephone Number
                     </label>
-                    <input type="text" required autocomplete="off" role="telnum"/>
+                    <input type="number" required autocomplete="off" role="telnum"/>
                 </div>
                 <div class="field two">
                     <div class="field-wrap">
@@ -226,7 +226,7 @@
                     <label>
                         Telephone Number
                     </label>
-                    <input type="text" required autocomplete="off" role="telnum"/>
+                    <input type="number" required autocomplete="off" role="telnum"/>
                 </div>
                 <div class="field two">
                     <div class="field-wrap">
@@ -269,7 +269,7 @@
                     <label>
                         Telephone Number
                     </label>
-                    <input type="text" autocomplete="off" role="telnum"/>
+                    <input type="number" autocomplete="off" role="telnum"/>
                 </div>
                 <div class="field two">
                     <div class="field-wrap">
