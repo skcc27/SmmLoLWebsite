@@ -17,4 +17,5 @@ elixir(function(mix) {
         .browserify('app.js')
         .scripts(['bootstrap-notify.js', 'sc.js', 'script.js', 'collector.js']);
     mix.sass('admin.scss');
+    mix.sass('minimal.scss');
 });

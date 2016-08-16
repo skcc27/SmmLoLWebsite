@@ -25,3 +25,7 @@ Route::get('/team/register', 'TeamController@formPage');
 
 // Test
 Route::any('/team/token', 'TeamEditController@generateToken');
+
+// Dev
+Route::get('/dev/teamlist', 'DevController@teamList');
+Route::get('/dev/team/{id}', 'DevController@team');

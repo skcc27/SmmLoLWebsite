@@ -8,27 +8,17 @@
 
     <!-- Title and other metadata -->
     <title>@yield('title') - Samarnmitr LoL Competition</title>
-@yield('metadata')
-<!-- CSS -->
-    <!-- TODO: Merge google font into sass -->
-    @yield('prestylesheet')
-    <link href="/css/app.css" rel="stylesheet" type="text/css">
-    <link href="/css/all.css" rel="stylesheet" type="text/css">
-    @yield('stylesheet')
+    <link href="/css/minimal.css" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    @include('ga')
     @yield('head')
-
 </head>
 <body class="@yield('body.class')">
 @section('content')
     <div class="container">
-        <div class="content">
-            <div class="title">Samarnmitr League of Legends Competition</div>
-        </div>
+        <h2>Hello World!</h2>
     </div>
 @show
 <!-- JavaScript -->
