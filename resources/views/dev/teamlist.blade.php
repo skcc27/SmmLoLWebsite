@@ -9,7 +9,8 @@
                 <small>currently {{$teamCount}}</small>
             </h1>
         </div>
-        <table class="table table-hover table-responsive">
+        <div class="table-responsive">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th>#</th>
@@ -31,5 +32,6 @@
             @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 @endsection
