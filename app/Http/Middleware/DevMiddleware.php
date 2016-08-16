@@ -9,7 +9,7 @@ class DevMiddleware
 {
     public function handle($request, Closure $next)
     {
-        if ($request->input('token') != env('DEV_TOKEN', '')) {
+        if ($request->has('token') && $request->input('token') != env('DEV_TOKEN', '')) {
             return redirect('/');
         }
 
