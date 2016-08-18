@@ -60,7 +60,7 @@ class TeamController extends Controller
                     // Create all contestants
                     for ($i = 1; $i <= 6; $i++) {
                         if ($i == 6)
-                            if ($request->input('first_name') == '')
+                            if ($request->input('first_name_' . $i) == '')
                                 continue;
                         $c = new Contestant;
                         $c->first_name = $request->input('first_name_' . $i);

@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="page-header">
             <h1>Team list
-                <small>currently {{$teamCount}}</small>
+                <small>currently registered: {{$teamCount}}</small>
             </h1>
         </div>
         <table class="table table-hover table-responsive">
