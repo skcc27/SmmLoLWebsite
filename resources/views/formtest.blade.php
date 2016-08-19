@@ -42,6 +42,8 @@
                 {{session('message')}}
             </div>
         @endif
+        <p class="text-danger"><strong>Please enter your name in Thai language and check your data validity before you
+                submit!</strong></p>
     </div>
     <div class="row">
         <form class="form-horizontal" method="post" action="/team/register">
