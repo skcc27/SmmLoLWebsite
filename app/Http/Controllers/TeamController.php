@@ -29,6 +29,7 @@ class TeamController extends Controller
     private $invalidFailMessage = "ข้อมูลที่คุณกรอกไม่ถูกต้อง กรุณาตรวจสอบอีกครั้ง";
     private $teamExistsMessage = "ชื่อทีมมีคนใช้ไปแล้ว";
     private $nameExistsMessage = "มีข้อมูลผู้เข้าแข่งขันคนนี้ในฐานข้อมูลแล้ว";
+    private $limitExceededMessage = "จำนวนทีมถึงขีดจำกัดแล้ว(32) โปรดติดต่อผู้ดูแลระบบ";
     public function register(Request $request)
     {
         /** @var \Illuminate\Validation\Validator $validator */
@@ -42,6 +43,8 @@ class TeamController extends Controller
         $data = [];
         if ($validator->fails()) {
             $data = ['status' => 'danger', 'message' => $this->invalidFailMessage];
+        } else if (count(Team::all()) >= 32) {
+            $data = ['status' => 'danger', 'message' => $this->limitExceededMessage];
         } else {
             DB::beginTransaction();
             try {
