@@ -20,7 +20,7 @@
     </div>
     <div class="button text main">
         <a href="https://smmlol.tk/team/register">
-            <button id="register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Register
+            <button id="register" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled>Register
             </button>
         </a>
         <button id="more_info" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">More info
