@@ -23,9 +23,8 @@
                     <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2 center">
                         <!-- Need to link with register ajax. -->
                         <button id="registerBtn"
-                                onclick="window.location = '/team/register'"
                                 class="lol-button register mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                            Register
+                            Result
                         </button>
                     </div>
                     <div class="col-md-6 col-md-offset-0 col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2 center">
